@@ -1,0 +1,32 @@
+.footm {
+    margin-top: 240px;
+}
+
+.foot {
+    background-color: #407BFF;
+    height: 310px;
+}
+
+.foot2 {
+    background-color: #262254;
+    height: 310px;
+
+}
+
+.icon-color {
+    color: #fff;
+}
+
+.sosmed {
+    padding-top: 120px;
+
+}
+
+
+.sosmed1 {
+    font-family: 'Inter';
+    color: #fff;
+    margin-top: 90px;
+    font-size: 20px;
+    font-weight: 500;
+}

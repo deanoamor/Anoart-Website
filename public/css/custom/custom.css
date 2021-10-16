@@ -1,0 +1,130 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.basefont {
+    font-family: 'Inter';
+    font-weight: 600;
+}
+
+.colorfontb {
+    color: #407BFF;
+}
+
+.colorfontbl {
+    color: #262254;
+}
+
+.marginfont {
+    margin-top: 110px;
+}
+
+.titleano {
+    font-family: 'Inter';
+    font-size: 70px;
+    font-weight: 700;
+    color: #262254;
+}
+
+.titleano2 {
+    font-family: 'Inter';
+    font-size: 70px;
+    font-weight: 700;
+    color: #407BFF;
+}
+
+.asset {
+    color: #262254;
+}
+
+.judulano {
+    margin-top: 130px;
+}
+
+.btn-primary {
+    background: #262254;
+    border: 0;
+    padding: 15px 40px 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter';
+}
+
+.btn-primary:hover {
+    background: #3d396e;
+    border: 0;
+}
+
+
+
+
+.tombol {
+    font-family: 'Inter';
+    color: white;
+    background-color: #262254;
+}
+
+.tombol:hover {
+    font-family: 'Inter';
+    color: white;
+    background-color: #413d75;
+}
+
+.kartuano {
+    margin-top: 50px;
+}
+
+.kartu {
+    height: 220px;
+    background-color: #262254;
+}
+
+.kartu1 {
+    height: 220px;
+    width: 350px;
+    background-color: #407BFF;
+}
+
+.copyr {
+    font-weight: 500;
+    font-family: 'Inter';
+    color: white;
+    margin-top: 25px;
+    margin-left: 30px;
+}
+
+.copyr1 {
+    font-weight: 500;
+    font-family: 'Inter';
+    color: white;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.copyr2 {
+    font-weight: 500;
+    font-family: 'Inter';
+    color: white;
+    margin-top: 8px;
+    margin-left: 30px;
+}
+
+.postrow {
+    margin-top: 50px;
+}
+
+.post {
+    width: 300px;
+}
+
+.page {
+    background-color: #262254 !important;
+    border-color: #262254 !important;
+    font-family: 'Inter';
+}
+
+.page2 {
+    border-color: white;
+    color: #262254;
+    font-family: 'Inter';
+}
