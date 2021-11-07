@@ -3,12 +3,13 @@ html {
 }
 
 .basefont {
-    font-family: 'Inter';
+    font-family: 'Poppins';
     font-weight: 600;
 }
 
 .colorfontb {
     color: #407BFF;
+    font-size: 20px;
 }
 
 .colorfontbl {
@@ -16,19 +17,20 @@ html {
 }
 
 .marginfont {
-    margin-top: 110px;
+    margin-top: 160px;
 }
 
+
 .titleano {
-    font-family: 'Inter';
-    font-size: 70px;
+    font-family: 'Poppins';
+    font-size: 60px;
     font-weight: 700;
     color: #262254;
 }
 
 .titleano2 {
-    font-family: 'Inter';
-    font-size: 70px;
+    font-family: 'Poppins';
+    font-size: 60px;
     font-weight: 700;
     color: #407BFF;
 }
@@ -47,7 +49,7 @@ html {
     padding: 15px 40px 15px 40px;
     font-size: 16px;
     font-weight: bold;
-    font-family: 'Inter';
+    font-family: 'Poppins';
 }
 
 .btn-primary:hover {
@@ -59,13 +61,13 @@ html {
 
 
 .tombol {
-    font-family: 'Inter';
+    font-family: 'Poppins';
     color: white;
     background-color: #262254;
 }
 
 .tombol:hover {
-    font-family: 'Inter';
+    font-family: 'Poppins';
     color: white;
     background-color: #413d75;
 }
@@ -87,7 +89,7 @@ html {
 
 .copyr {
     font-weight: 500;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     color: white;
     margin-top: 25px;
     margin-left: 30px;
@@ -95,7 +97,7 @@ html {
 
 .copyr1 {
     font-weight: 500;
-    font-family: 'Inter';
+    font-family: 'Poppins';
     color: white;
     margin-top: 15px;
     margin-left: 30px;
@@ -120,11 +122,11 @@ html {
 .page {
     background-color: #262254 !important;
     border-color: #262254 !important;
-    font-family: 'Inter';
+    font-family: 'Poppins';
 }
 
 .page2 {
     border-color: white;
     color: #262254;
-    font-family: 'Inter';
+    font-family: 'Poppins';
 }

@@ -12,9 +12,9 @@ class clientsideController extends Controller
     public function indexclient()
     {
 
-        $cari = "";
+
         $data = DB::table('data')->paginate(12);
-        return view('download')->with('data', $data)->with('cari', $cari);
+        return view('download')->with('data', $data);
     }
 
 

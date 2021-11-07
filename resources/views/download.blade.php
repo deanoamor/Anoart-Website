@@ -12,8 +12,8 @@
     <section>
 
         <div class="container">
-            <div class="card kartu kartuano border-0 rounded-3">
-                <div class="row">
+            <div class="card kartu kartuano border-0 rounded-3 ">
+                <div class="row ">
 
 
                     <div class="col kartu1 d-flex justify-content-center rounded-3 ">
@@ -26,7 +26,7 @@
 
                         <h6 class="copyr1">All design assets on this website may be used commercially provided:</h6>
 
-                        <h6 class="copyr1">- This asset may not be used for anything that is prohibited by law</h6>
+                        <h6 class="copyr2">- This asset may not be used for anything that is prohibited by law</h6>
 
 
                         <h6 class="copyr2">- Because basically this design is basic, you can freely edit or change the shape of this design. </h6>
@@ -61,7 +61,7 @@
                 @else
                 <div class="col-12 mt-4">
                     <div class="alert alert-danger justify-content-between" role="alert">
-                        <h4 class="alert-heading basefont">Sorry, i can't find your data</h4>
+                        <h4 class="alert-heading basefont">Sorry, we can't find your data</h4>
                         <hr>
                         <p class="basefont" style="font-size: 20px;"> we couldn't find <b>{{$cari}} </b></p>
 
