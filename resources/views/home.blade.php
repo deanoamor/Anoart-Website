@@ -18,10 +18,11 @@
                         <br>
 
                     </h1>
-                    <a class="btn btn-primary mt-4 animate__animated animate__fadeInLeft" href="{{url('/download')}}" role="button">Get started</a>
+                    <p></p>
+                    <a class="btn btn-primary mt-4 animate__animated animate__fadeInLeft" href="{{url('/download')}}" role="button">Let's start</a>
                 </div>
                 <div class="col d-flex justify-content-center  gambar ">
-                    <img width="550" class="d-none d-sm-block animate__animated animate__fadeInRight" src="{{ URL::asset('gambar/mix.svg') }}" alt="">
+                    <img width="550" class=" animate__animated animate__fadeInRight" src="{{ URL::asset('gambar/mix.svg') }}" alt="">
                 </div>
             </div>
         </div>

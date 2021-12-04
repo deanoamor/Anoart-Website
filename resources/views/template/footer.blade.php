@@ -4,7 +4,7 @@
 
             <div class="row align-items-center foot">
                 <div class="col d-flex justify-content-center">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{url('/home')}}">
                         <img class="logo" src="{{ URL::asset('gambar/anoulogowhite.svg') }}" width="140">
                     </a>
                 </div>
@@ -16,9 +16,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col  d-flex justify-content-center sosmed">
-                            <a href="https://www.linkedin.com/in/deanoamor/"> <i class="fab fa-linkedin fa-3x icon-color" aria-hidden="true"></i></a>
-                            <a href="https://github.com/deanoamor" class="ml-5"> <i class="fab fa-github fa-3x icon-color ms-5" aria-hidden="true"></i></a>
-                            <a href="mailto:deanoamor.design@gmail.com" class="ml-5"> <i class="fa fa-envelope fa-3x icon-color ms-5" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/deanoamor/"> <i class="fab fa-linkedin  icon-color " aria-hidden="true"></i></a>
+                            <a href="https://github.com/deanoamor" class="ml-5"> <i class="fab fa-github  icon-color ms-5" aria-hidden="true"></i></a>
+                            <a href="mailto:deanoamor.design@gmail.com" class="ml-5"> <i class="fa fa-envelope  icon-color ms-5" aria-hidden="true"></i></a>
 
                         </div>
                     </div>

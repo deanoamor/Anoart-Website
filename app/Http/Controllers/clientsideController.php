@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
@@ -12,9 +13,10 @@ class clientsideController extends Controller
     public function indexclient()
     {
 
-
-        $data = DB::table('data')->paginate(12);
-        return view('download')->with('data', $data);
+        $data = Data::paginate(8);
+        $datacount = Data::count();
+        $cari = "";
+        return view('download')->with('data', $data)->with('datacount', $datacount)->with('cari', $cari);
     }
 
 
@@ -23,8 +25,7 @@ class clientsideController extends Controller
         $cari = $request->cari;
 
 
-        $data = DB::table('data')
-            ->where('data_title', 'like', "%" . $cari . "%")
+        $data = Data::where('data_title', 'like', "%" . $cari . "%")
             ->paginate();
 
 
@@ -34,7 +35,7 @@ class clientsideController extends Controller
     public function getdata($id)
     {
 
-        $datadownload = DB::table('data')->where('data_id', $id)->first();
+        $datadownload = Data::where('data_id', $id)->first();
 
         $file = public_path() . "/storage/file/$datadownload->data_file";
         return Response()->download($file, $datadownload->data_file);

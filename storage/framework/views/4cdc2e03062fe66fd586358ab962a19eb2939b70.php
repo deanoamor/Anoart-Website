@@ -47,15 +47,21 @@
                 <input class="form-control me-2" name="cari" type="search" placeholder="Search" style="width: 280px;" aria-label="Search">
                 <button class="btn tombol btn-success" type="submit">Search</button>
             </form>
-
             <div class="row postrow d-flex justify-content-center">
                 <?php if($data->isNotEmpty()): ?>
 
                 <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $datahome): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded">
-                    <a href="/download/<?php echo e($datahome->data_id); ?>"> <img src="<?php echo e(asset('storage/desain/' . $datahome->data_nama)); ?>" class="card-img-top" alt="..."></a>
 
+
+                <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded ">
+                    <a data-bs-toggle="collapse" id="click-start<?php echo e($datahome->data_id); ?>" href="#collapseDownload<?php echo e($datahome->data_id); ?> " role="button" aria-controls="collapseExample"> <img src="<?php echo e(asset('storage/desain/' . $datahome->data_nama)); ?>" class="click-end<?php echo e($datahome->data_id); ?> img-product card-img-top"></a>
+                    <div class="collapse " id="collapseDownload<?php echo e($datahome->data_id); ?>">
+                        <a href="/download/<?php echo e($datahome->data_id); ?>" class=" center btn btn-primary  ">Download</a>
+                    </div>
                 </div>
+
+
+
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                 <?php else: ?>

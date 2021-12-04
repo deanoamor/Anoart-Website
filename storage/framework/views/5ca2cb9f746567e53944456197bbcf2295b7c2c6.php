@@ -29,26 +29,26 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed basefont colorfontb text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            What about the copyright of the assets?
+                            What can I do with this design?
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p class="basefont colorfontbl text-center " style="font-size: 20px;">
-                                All files are in the svg format and are allowed to change the design or make design assets on this web as the basis for creating new designs.</p>
+                                Allowed to change the design or make design assets on this web as the basis for creating new designs.</p>
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed basefont colorfontb text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            How do I contact the website builder?
+                            What is the file format of this design?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                             <p class="basefont colorfontbl text-center " style="font-size: 20px;">
-                                All files are in the svg format and are allowed to change the design or make design assets on this web as the basis for creating new designs.</p>
+                                All files are in the svg format.</p>
                         </div>
                     </div>
                 </div>

@@ -119,6 +119,13 @@ html {
     width: 300px;
 }
 
+.button-post {
+    width: 300px;
+    height: 50px;
+
+
+}
+
 .page {
     background-color: #262254 !important;
     border-color: #262254 !important;

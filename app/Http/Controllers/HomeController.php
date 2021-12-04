@@ -21,7 +21,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data = DB::table('data')->paginate(12);
+        $data = Data::paginate(8);
 
         return view('admin/dashboard')->with('data', $data);
     }
@@ -54,181 +54,80 @@ class HomeController extends Controller
         );
 
 
-        $data = DB::table('data')->insert([
+        $data = Data::insert(array(
             'data_nama' => $namafile,
             'data_file' => $namafiledesain,
             'data_title' => $request->namadesain,
-        ]);
+        ));
 
         return redirect()->route('dashboard')->with('data', $data);
     }
 
     public function edit($id)
     {
-        $data = DB::table('data')->where('data_id', $id)->first();
+        $data = Data::where('data_id', $id)->first();
         return view('admin/edit')->with('data', $data);
     }
 
     public function update(request $request)
     {
-        $dataid = DB::table('data')->where('data_id', $request->id)->first();
+        $dataid = Data::where('data_id', $request->id)->first();
 
+        $data =  Data::where('data_id', $request->id)->update(array(
+            'data_title' => $request->namadesainedit,
 
-        if ($request->file('fotodesainedit') == "" && $request->file('filedesainedit') == "") {
+        ));
 
-            $data =  DB::table('data')->where('data_id', $request->id)->update([
-                'data_title' => $request->namadesainedit,
-
-            ]);
-        } elseif ($request->file('fotodesainedit') == "") {
-
-            if ($dataid->data_file == NULL) {
-                $filedesainedit = $request->file('filedesainedit');
-                $namafiledesainedit = $filedesainedit->getClientOriginalName();
-                Storage::putFileAS(
-                    'public/file',
-                    $filedesainedit,
-                    $namafiledesainedit
-                );
-
-
-                $data =  DB::table('data')->where('data_id', $request->id)->update([
-                    'data_file' => $namafiledesainedit,
-                    'data_title' => $request->namadesainedit,
-
-
-                ]);
-            } else {
-                //hapus file lama
-                Storage::delete('public/file/' . $dataid->data_file);
-
-                $filedesainedit = $request->file('filedesainedit');
-                $namafiledesainedit = $filedesainedit->getClientOriginalName();
-                Storage::putFileAS(
-                    'public/file',
-                    $filedesainedit,
-                    $namafiledesainedit
-                );
-
-                $data =  DB::table('data')->where('data_id', $request->id)->update([
-                    'data_file' => $namafiledesainedit,
-                    'data_title' => $request->namadesainedit,
-
-
-                ]);
-            }
-        } elseif ($request->file('filedesainedit') == "") {
-
-            if ($dataid->data_nama == null) {
-                $fotodesainedit = $request->file('fotodesainedit');
-                $namafotodesainedit = $fotodesainedit->getClientOriginalName();
-                Storage::putFileAs(
-                    'public/desain',
-                    $fotodesainedit,
-                    $namafotodesainedit
-                );
-
-
-                $data =  DB::table('data')->where('data_id', $request->id)->update([
-                    'data_nama' => $namafotodesainedit,
-                    'data_title' => $request->namadesainedit,
-
-
-                ]);
-            } else {
-
-                //hapus file lama
-                Storage::delete('public/desain/' . $dataid->data_nama);
-
-                $fotodesainedit = $request->file('fotodesainedit');
-                $namafotodesainedit = $fotodesainedit->getClientOriginalName();
-                Storage::putFileAs(
-                    'public/desain',
-                    $fotodesainedit,
-                    $namafotodesainedit
-                );
-
-                $data =  DB::table('data')->where('data_id', $request->id)->update([
-                    'data_nama' => $namafotodesainedit,
-                    'data_title' => $request->namadesainedit,
-
-
-                ]);
-            }
+        if (empty($request->file('fotodesainedit'))) {
+            $dataid->data_nama = $dataid->data_nama;
         } else {
-            if ($dataid->data_nama == null && $dataid->data_file == null) {
-                $fotodesainedit = $request->file('fotodesainedit');
-                $namafotodesainedit = $fotodesainedit->getClientOriginalName();
-                Storage::putFileAs(
-                    'public/desain',
-                    $fotodesainedit,
-                    $namafotodesainedit
-                );
+            Storage::delete('public/desain/' . $dataid->data_nama);
 
-                $filedesainedit = $request->file('filedesainedit');
-                $namafiledesainedit = $filedesainedit->getClientOriginalName();
-                Storage::putFileAS(
-                    'public/file',
-                    $filedesainedit,
-                    $namafiledesainedit
-                );
+            $fotodesainedit = $request->file('fotodesainedit');
+            $namafotodesainedit = $fotodesainedit->getClientOriginalName();
+            Storage::putFileAs(
+                'public/desain',
+                $fotodesainedit,
+                $namafotodesainedit
+            );
 
-
-
-                $data =  DB::table('data')->where('data_id', $request->id)->update([
-                    'data_file' => $namafiledesainedit,
-                    'data_nama' => $namafotodesainedit,
-                    'data_title' => $request->namadesainedit,
-
-
-                ]);
-            } else {
-
-                //hapus file lama
-                Storage::delete('public/file/' . $dataid->data_file);
-
-                Storage::delete('public/desain/' . $dataid->data_nama);
-
-
-
-                $fotodesainedit = $request->file('fotodesainedit');
-                $namafotodesainedit = $fotodesainedit->getClientOriginalName();
-                Storage::putFileAs(
-                    'public/desain',
-                    $fotodesainedit,
-                    $namafotodesainedit
-                );
-
-                $filedesainedit = $request->file('filedesainedit');
-                $namafiledesainedit = $filedesainedit->getClientOriginalName();
-                Storage::putFileAS(
-                    'public/file',
-                    $filedesainedit,
-                    $namafiledesainedit
-                );
-
-
-
-                $data =  DB::table('data')->where('data_id', $request->id)->update([
-                    'data_file' => $namafiledesainedit,
-                    'data_nama' => $namafotodesainedit,
-                    'data_title' => $request->namadesainedit,
-
-                ]);
-            }
+            $data =  Data::where('data_id', $request->id)->update(array(
+                'data_nama' => $namafotodesainedit,
+            ));
         }
+
+
+
+        if (empty($request->file('filedesainedit'))) {
+            $dataid->data_file = $dataid->data_file;
+        } else {
+            Storage::delete('public/file/' . $dataid->data_file);
+
+            $filedesainedit = $request->file('filedesainedit');
+            $namafiledesainedit = $filedesainedit->getClientOriginalName();
+            Storage::putFileAS(
+                'public/file',
+                $filedesainedit,
+                $namafiledesainedit
+            );
+
+            $data =  Data::where('data_id', $request->id)->update(array(
+                'data_file' => $namafiledesainedit,
+            ));
+        }
+
         return redirect()->route('dashboard')->with('data', $data);
     }
 
     public function hapus($id)
     {
 
-        $dataid = DB::table('data')->where('data_id', $id)->first();
+        $dataid = Data::where('data_id', $id)->first();
         Storage::delete('public/file/' . $dataid->data_file);
 
         Storage::delete('public/desain/' . $dataid->data_nama);
 
-        DB::table('data')->where('data_id', $id)->delete();
+        Data::where('data_id', $id)->delete();
 
         return redirect()->route('dashboard');
     }

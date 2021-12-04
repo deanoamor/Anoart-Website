@@ -47,15 +47,21 @@
                 <input class="form-control me-2" name="cari" type="search" placeholder="Search" style="width: 280px;" aria-label="Search">
                 <button class="btn tombol btn-success" type="submit">Search</button>
             </form>
-
             <div class="row postrow d-flex justify-content-center">
                 @if($data->isNotEmpty())
 
                 @foreach($data as $datahome)
-                <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded">
-                    <a href="/download/{{ $datahome->data_id }}"> <img src="{{ asset('storage/desain/' . $datahome->data_nama) }}" class="card-img-top" alt="..."></a>
 
+
+                <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded ">
+                    <a data-bs-toggle="collapse" id="click-start{{ $datahome->data_id }}" href="#collapseDownload{{ $datahome->data_id }} " role="button" aria-controls="collapseExample"> <img src="{{ asset('storage/desain/' . $datahome->data_nama) }}" class="click-end{{ $datahome->data_id }} img-product card-img-top"></a>
+                    <div class="collapse " id="collapseDownload{{ $datahome->data_id }}">
+                        <a href="/download/{{ $datahome->data_id }}" class=" center btn btn-primary  ">Download</a>
+                    </div>
                 </div>
+
+
+
                 @endforeach
 
                 @else

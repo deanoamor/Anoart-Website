@@ -1,6 +1,6 @@
 <nav class="navbar py-3 navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<?php echo e(url('/home')); ?>">
             <img class="logo" src="<?php echo e(URL::asset('gambar/anoulogo.svg')); ?>" width="120">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

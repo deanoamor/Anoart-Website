@@ -5,7 +5,7 @@
     }
 
     .logo {
-        width: 80px;
+        width: 100px;
     }
 
     .gambar {
@@ -19,7 +19,6 @@
     .footm {
         margin-top: 140px;
     }
-
 
     .copyr {
         font-weight: 500;
@@ -63,4 +62,43 @@
 
 
 
+}
+
+@media only screen and (max-width: 425px) {
+    .sosmed {
+        font-size: 40px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .titleano {
+        font-size: 40px;
+    }
+
+    .titleano2 {
+        font-size: 40px;
+    }
+
+    .btn-primary {
+        background: #262254;
+        border: 0;
+        padding: 15px 40px 15px 40px;
+        font-size: 10px;
+        font-weight: bold;
+        font-family: 'Poppins';
+        margin-top: 10px;
+    }
+
+    .gambar {
+        margin-top: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .sosmed {
+        font-size: 30px;
+    }
 }
