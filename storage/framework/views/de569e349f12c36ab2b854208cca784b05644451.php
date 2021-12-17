@@ -16,6 +16,7 @@
                 <div class="card-body">
                     <h5>Selamat datang di halaman dashboard, <?php echo e(Auth::user()->name); ?> <strong></strong></h5>
                     <a href="<?php echo e(url('/createinilohanjir')); ?>" class="btn btn-success mt-3">Buat post</a>
+                    <a href="<?php echo e(url('/trashinilohanjir')); ?>" class="btn btn-danger mt-3">Trash</a>
                     <a href="<?php echo e(url('/logout')); ?>" class="btn btn-danger mt-3 float-end">Logout</a>
                 </div>
             </div>

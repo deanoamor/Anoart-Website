@@ -39,12 +39,27 @@ Route::post('/login/store', 'App\Http\Controllers\AuthController@Login');
 // Route::post('/register/store', 'App\Http\Controllers\AuthController@register');
 
 
+
 Route::get('/dashboardinilohsumpah', 'App\Http\Controllers\HomeController@index')->name('dashboard');
+
+
+
 Route::get('/createinilohanjir', 'App\Http\Controllers\HomeController@create')->name('create');
 Route::post('/create/store', 'App\Http\Controllers\HomeController@store');
+
+
+
 Route::get('/editinilohanjir/{id}', 'App\Http\Controllers\HomeController@edit')->name('edit');
 Route::post('/edit/update', 'App\Http\Controllers\HomeController@update');
+
+
+
 Route::get('/deletebang/{id}', 'App\Http\Controllers\HomeController@hapus');
+Route::get('/trashinilohanjir', 'App\Http\Controllers\HomeController@trashview')->name('trash');
+Route::get('/restorebang/{id}', 'App\Http\Controllers\HomeController@restore');
+Route::get('/restoreallbang', 'App\Http\Controllers\HomeController@restoreall');
+Route::get('/deletepermanentbang/{id}', 'App\Http\Controllers\HomeController@deletepermanent');
+Route::get('/deletepermanentbangall', 'App\Http\Controllers\HomeController@deletepermanentall');
 
 
 

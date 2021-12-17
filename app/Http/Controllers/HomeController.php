@@ -54,11 +54,11 @@ class HomeController extends Controller
         );
 
 
-        $data = Data::insert(array(
+        $data = Data::create([
             'data_nama' => $namafile,
             'data_file' => $namafiledesain,
             'data_title' => $request->namadesain,
-        ));
+        ]);
 
         return redirect()->route('dashboard')->with('data', $data);
     }
@@ -73,10 +73,10 @@ class HomeController extends Controller
     {
         $dataid = Data::where('data_id', $request->id)->first();
 
-        $data =  Data::where('data_id', $request->id)->update(array(
+        $data =  Data::where('data_id', $request->id)->update([
             'data_title' => $request->namadesainedit,
 
-        ));
+        ]);
 
         if (empty($request->file('fotodesainedit'))) {
             $dataid->data_nama = $dataid->data_nama;
@@ -91,9 +91,9 @@ class HomeController extends Controller
                 $namafotodesainedit
             );
 
-            $data =  Data::where('data_id', $request->id)->update(array(
+            $data =  Data::where('data_id', $request->id)->update([
                 'data_nama' => $namafotodesainedit,
-            ));
+            ]);
         }
 
 
@@ -111,9 +111,9 @@ class HomeController extends Controller
                 $namafiledesainedit
             );
 
-            $data =  Data::where('data_id', $request->id)->update(array(
+            $data =  Data::where('data_id', $request->id)->update([
                 'data_file' => $namafiledesainedit,
-            ));
+            ]);
         }
 
         return redirect()->route('dashboard')->with('data', $data);
@@ -122,12 +122,57 @@ class HomeController extends Controller
     public function hapus($id)
     {
 
-        $dataid = Data::where('data_id', $id)->first();
+
+        Data::where('data_id', $id)->delete();
+
+        return redirect()->route('dashboard');
+    }
+
+    public function trashview()
+    {
+
+        $data = Data::onlyTrashed()->get();
+        return view('admin/trash')->with('data', $data);
+    }
+
+    public function restore($id)
+    {
+        $data = Data::onlyTrashed()->where('data_id', $id);
+        $data->restore();
+        return redirect()->route('dashboard');
+    }
+
+    public function restoreall()
+    {
+        $data = Data::onlyTrashed();
+        $data->restore();
+        return redirect()->route('dashboard');
+    }
+
+    public function deletepermanent($id)
+    {
+
+        $dataid = Data::onlyTrashed()->where('data_id', $id)->first();
         Storage::delete('public/file/' . $dataid->data_file);
 
         Storage::delete('public/desain/' . $dataid->data_nama);
 
-        Data::where('data_id', $id)->delete();
+        $data = Data::onlyTrashed()->where('data_id', $id);
+        $data->forceDelete();
+
+        return redirect()->route('dashboard');
+    }
+
+    //dalam pengembangan
+    public function deletepermanentall()
+    {
+
+        $dataid = Data::onlyTrashed()->whereNotNull("deleted_at")->first();
+        Storage::delete('public/file/' . $dataid->data_file);
+        Storage::delete('public/desain/' . $dataid->data_nama);
+
+        $data = Data::onlyTrashed();
+        $data->forceDelete();
 
         return redirect()->route('dashboard');
     }
