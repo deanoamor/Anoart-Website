@@ -65,15 +65,15 @@ class HomeController extends Controller
 
     public function edit($id)
     {
-        $data = Data::where('data_id', $id)->first();
+        $data = Data::where('id', $id)->first();
         return view('admin/edit')->with('data', $data);
     }
 
     public function update(request $request)
     {
-        $dataid = Data::where('data_id', $request->id)->first();
+        $dataid = Data::where('id', $request->id)->first();
 
-        $data =  Data::where('data_id', $request->id)->update([
+        $data =  Data::where('id', $request->id)->update([
             'data_title' => $request->namadesainedit,
 
         ]);
@@ -91,7 +91,7 @@ class HomeController extends Controller
                 $namafotodesainedit
             );
 
-            $data =  Data::where('data_id', $request->id)->update([
+            $data =  Data::where('id', $request->id)->update([
                 'data_nama' => $namafotodesainedit,
             ]);
         }
@@ -111,7 +111,7 @@ class HomeController extends Controller
                 $namafiledesainedit
             );
 
-            $data =  Data::where('data_id', $request->id)->update([
+            $data =  Data::where('id', $request->id)->update([
                 'data_file' => $namafiledesainedit,
             ]);
         }
@@ -123,7 +123,7 @@ class HomeController extends Controller
     {
 
 
-        Data::where('data_id', $id)->delete();
+        Data::where('id', $id)->delete();
 
         return redirect()->route('dashboard');
     }
@@ -137,7 +137,7 @@ class HomeController extends Controller
 
     public function restore($id)
     {
-        $data = Data::onlyTrashed()->where('data_id', $id);
+        $data = Data::onlyTrashed()->where('id', $id);
         $data->restore();
         return redirect()->route('dashboard');
     }
@@ -152,7 +152,7 @@ class HomeController extends Controller
     public function deletepermanent($id)
     {
 
-        $dataid = Data::onlyTrashed()->where('data_id', $id)->first();
+        $dataid = Data::onlyTrashed()->where('id', $id)->first();
         Storage::delete('public/file/' . $dataid->data_file);
 
         Storage::delete('public/desain/' . $dataid->data_nama);

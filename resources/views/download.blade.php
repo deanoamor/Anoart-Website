@@ -54,10 +54,7 @@
 
 
                 <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded ">
-                    <a data-bs-toggle="collapse" id="click-start{{ $datahome->data_id }}" href="#collapseDownload{{ $datahome->data_id }} " role="button" aria-controls="collapseExample"> <img src="{{ asset('storage/desain/' . $datahome->data_nama) }}" class="click-end{{ $datahome->data_id }} img-product card-img-top"></a>
-                    <div class="collapse " id="collapseDownload{{ $datahome->data_id }}">
-                        <a href="/download/{{ $datahome->data_id }}" class=" center btn btn-primary  ">Download</a>
-                    </div>
+                    <a href="/download/{{ $datahome->id }}" role="button"> <img src="{{ asset('storage/desain/' . $datahome->data_nama) }}" class=" img-product card-img-top"></a>
                 </div>
 
 

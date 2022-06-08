@@ -19,6 +19,7 @@ class CreateDatas extends Migration
             $table->string('data_file');
             $table->string('data_title');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -12,7 +12,7 @@ class Data extends Model
     use SoftDeletes;
 
     protected $table = 'datas';
-    protected $primaryKey = 'data_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'data_nama',

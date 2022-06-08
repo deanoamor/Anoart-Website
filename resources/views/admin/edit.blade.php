@@ -12,7 +12,7 @@
             <div class="col py-4 px-4">
                 <form action="{{url('/edit/update')}}" enctype="multipart/form-data" method="post">
                     {{csrf_field()}}
-                    <input class="form-control" type="hidden" name="id" id="id" value="{{ $data->data_id}}">
+                    <input class="form-control" type="hidden" name="id" id="id" value="{{ $data->id}}">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Foto</label>
                         <input type="file" class="form-control" name="fotodesainedit" id="exampleInputEmail1" aria-describedby="emailHelp">

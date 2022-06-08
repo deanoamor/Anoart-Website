@@ -24,7 +24,7 @@
                     </div>
                     <div class="row ">
                         <div class="col d-flex justify-content-center sosmed1">
-                            <p>Copyright © 2021 Ano</p>
+                            <p>Copyright © 2022 Ano</p>
                         </div>
                     </div>
                 </div>

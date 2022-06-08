@@ -30,8 +30,8 @@
             @foreach($data as $datahome)
             <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded">
                 <img src="{{ asset('storage/desain/' . $datahome->data_nama) }}" class=" card-img-top" alt="...">
-                <a href="/editinilohanjir/{{ $datahome->data_id }}" class="btn btn-warning mt-3">Edit</a>
-                <a href="/deletebang/{{ $datahome->data_id }}" onclick="return confirm('yakin?');" class="btn btn-danger mt-3">Delete</a>
+                <a href="/editinilohanjir/{{ $datahome->id }}" class="btn btn-warning mt-3">Edit</a>
+                <a href="/deletebang/{{ $datahome->id }}" onclick="return confirm('yakin?');" class="btn btn-danger mt-3">Delete</a>
             </div>
             @endforeach
 

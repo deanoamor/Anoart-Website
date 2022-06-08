@@ -35,8 +35,8 @@ Route::get('/download/{id}', 'App\Http\Controllers\clientsideController@getdata'
 
 Route::get('/loginmasayologin', 'App\Http\Controllers\AuthController@showFormLogin')->name('login');
 Route::post('/login/store', 'App\Http\Controllers\AuthController@Login');
-// Route::get('/register', 'App\Http\Controllers\AuthController@showFormRegister')->name('register');
-// Route::post('/register/store', 'App\Http\Controllers\AuthController@register');
+Route::get('/register', 'App\Http\Controllers\AuthController@showFormRegister')->name('register');
+Route::post('/register/store', 'App\Http\Controllers\AuthController@register');
 
 
 

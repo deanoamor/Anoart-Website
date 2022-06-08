@@ -35,7 +35,7 @@ class clientsideController extends Controller
     public function getdata($id)
     {
 
-        $datadownload = Data::where('data_id', $id)->first();
+        $datadownload = Data::where('id', $id)->first();
 
         $file = public_path() . "/storage/file/$datadownload->data_file";
         return Response()->download($file, $datadownload->data_file);

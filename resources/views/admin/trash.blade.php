@@ -20,8 +20,8 @@
             @forelse($data as $datahome)
             <div class="card mx-2 post shadow p-3 mb-5 border-0 rounded">
                 <img src="{{ asset('storage/desain/' . $datahome->data_nama) }}" class=" card-img-top" alt="...">
-                <a href="/restorebang/{{ $datahome->data_id }}" class="btn btn-success mt-3">Restore</a>
-                <a href="/deletepermanentbang/{{ $datahome->data_id }}" onclick="return confirm('yakin?');" class="btn btn-danger mt-3">Delete Permanent</a>
+                <a href="/restorebang/{{ $datahome->id }}" class="btn btn-success mt-3">Restore</a>
+                <a href="/deletepermanentbang/{{ $datahome->id }}" onclick="return confirm('yakin?');" class="btn btn-danger mt-3">Delete Permanent</a>
             </div>
             @empty
             <div class="col-12 mt-4">
